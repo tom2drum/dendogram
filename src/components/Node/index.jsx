@@ -9,6 +9,7 @@ class Node extends Component {
       <div className="Node">
         <span className="Node__label">{value}</span>
         <div className="Node__circle" />
+        {this.props.children}
       </div>
     );
   }

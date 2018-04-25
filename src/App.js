@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-import Node from './components/Node';
+import Tree from './components/Tree';
 import './App.css';
-import tree from './data/tree';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Node node={tree.root} />
+        <Tree />
       </div>
     );
   }
