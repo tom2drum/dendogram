@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import _ from 'lodash/object';
 
 import Node from '../Node';
 import tree from '../../data/tree';
+import { toggleChildrenVisibility } from './utils';
 
 class Tree extends Component {
   state = {
@@ -12,31 +12,30 @@ class Tree extends Component {
   handleNodeClick = ({ path, left, right }) => {
     if (!left && !right) return null;
 
-    const newState = JSON.parse(JSON.stringify(this.state));
-    const curVisibility =
-      _.get(newState, `tree.${path}.left.visible`) &&
-      _.get(newState, `tree.${path}.left.visible`);
+    const undatedTree = toggleChildrenVisibility(this.state.tree, path);
 
-    _.set(newState, `tree.${path}.left.visible`, !curVisibility);
-    _.set(newState, `tree.${path}.right.visible`, !curVisibility);
-
-    this.setState(newState);
+    this.setState({
+      ...this.state,
+      tree: undatedTree,
+    });
   };
 
   renderChildren({ left, right }) {
     return (
       (left || right) && (
         <div>
-          {right && right.visible ? (
-            <Node node={right} onClick={this.handleNodeClick}>
-              {this.renderChildren(right)}
-            </Node>
-          ) : null}
-          {left && left.visible ? (
-            <Node node={left} onClick={this.handleNodeClick}>
-              {this.renderChildren(left)}
-            </Node>
-          ) : null}
+          {right &&
+            right.visible && (
+              <Node node={right} onClick={this.handleNodeClick}>
+                {this.renderChildren(right)}
+              </Node>
+            )}
+          {left &&
+            left.visible && (
+              <Node node={left} onClick={this.handleNodeClick}>
+                {this.renderChildren(left)}
+              </Node>
+            )}
         </div>
       )
     );
