@@ -42,6 +42,10 @@
   cursor: pointer;
 }
 
+.Node-collapsed > .Node__circle {
+  background-color: #ffb9d6;
+}
+
 .Node__label {
   width: 150px;
   text-align: right;

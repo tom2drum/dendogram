@@ -1,3 +1,7 @@
+$base-y-distance: 100px
+$level-y-factor: 50px
+$primary-color: #ff539a
+
 .Node
   display: flex
   align-items: center
@@ -9,19 +13,22 @@
 
 @for $i from 1 through 3
   .Node__right.Node__level-#{$i}
-    top: calc(-100px + ((#{$i} - 2) * 50px))
+    top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
   .Node__left.Node__level-#{$i}
-    bottom: calc(-100px + ((#{$i} - 2) * 50px))
+    bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
 
 
 .Node__circle
   width: 20px
   height: 20px
   border-radius: 50%
-  border: 3px solid #ff539a
+  border: 3px solid $primary-color
 
   margin-left: 10px
   cursor: pointer
+
+.Node-collapsed > .Node__circle
+  background-color: lighten($primary-color, 20%)
 
 .Node__label
   width: 150px

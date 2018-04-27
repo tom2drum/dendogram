@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { isExpanded, filterOutNodeCollapsedClass } from './utils';
 import './styles.css';
 
 class Node extends Component {
@@ -8,7 +8,10 @@ class Node extends Component {
   };
 
   componentDidMount() {
-    const { path } = this.props.node;
+    const {
+      node,
+      node: { path },
+    } = this.props;
     const steps = path.split('.');
     const type = steps[steps.length - 1];
 
@@ -18,13 +21,28 @@ class Node extends Component {
         ...this.state.classNames,
         `Node__${type}`,
         `Node__level-${steps.length}`,
+        ...(!isExpanded(node) ? ['Node-collapsed'] : []),
       ],
     };
     this.setState(newState);
   }
 
   handleCircleClick = () => {
-    this.props.onClick(this.props.node);
+    const { node, onClick } = this.props;
+    const { classNames } = this.state;
+
+    if (!node.left && !node.right) return;
+
+    onClick(node);
+
+    const newClassNames = isExpanded(node)
+      ? [...classNames, 'Node-collapsed']
+      : classNames.filter(filterOutNodeCollapsedClass);
+
+    this.setState({
+      ...this.state,
+      classNames: newClassNames,
+    });
   };
 
   render() {

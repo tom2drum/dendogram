@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Node from '../Node';
 import tree from '../../data/tree';
-import { toggleChildrenVisibility } from './utils';
+import { expandChildren } from './utils';
 
 import './styles.css';
 
@@ -14,7 +14,7 @@ class Tree extends Component {
   handleNodeClick = ({ path, left, right }) => {
     if (!left && !right) return null;
 
-    const undatedTree = toggleChildrenVisibility(this.state.tree, path);
+    const undatedTree = expandChildren(this.state.tree, path);
 
     this.setState({
       ...this.state,
