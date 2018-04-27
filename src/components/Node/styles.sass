@@ -7,15 +7,13 @@ $primary-color: #ff539a
   align-items: center
   position: absolute
 
-.Node__left,
-.Node__right
-  left: 250px
-
-@for $i from 1 through 3
+@for $i from 2 through 3
   .Node__right.Node__level-#{$i}
-    top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+    // top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+    animation: expand-right-level-#{$i} 0.8s forwards
   .Node__left.Node__level-#{$i}
-    bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+    // bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+    animation: expand-left-level-#{$i} 0.8s forwards
 
 
 .Node__circle
@@ -33,3 +31,26 @@ $primary-color: #ff539a
 .Node__label
   width: 150px
   text-align: right
+
+@for $i from 2 through 3
+  @keyframes expand-right-level-#{$i}
+    0%
+      left: 0
+      top: 0
+      opacity: 0
+    100%
+      left: 250px
+      top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+      opacity: 1
+
+@for $i from 2 through 3
+  @keyframes expand-left-level-#{$i}
+    0%
+      left: 0
+      bottom: 0
+      opacity: 0
+    100%
+      left: 250px
+      bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+      opacity: 1
+      

@@ -6,5 +6,5 @@ export function isExpanded(node) {
 }
 
 export function filterOutNodeCollapsedClass(className) {
-  return className != 'Node-collapsed';
+  return className !== 'Node-collapsed';
 }
