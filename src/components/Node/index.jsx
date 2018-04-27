@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { isExpanded, filterOutNodeCollapsedClass } from './utils';
+import { isExpanded, isLeaf, filterOutNodeCollapsedClass } from './utils';
 import './styles.css';
+import Edge from './Edge';
 
 class Node extends Component {
   state = {
@@ -20,7 +21,7 @@ class Node extends Component {
       classNames: [
         ...this.state.classNames,
         `Node__${type}`,
-        `Node__level-${steps.length}`,
+        `Node__level-${steps.length - 1}`,
         ...(!isExpanded(node) ? ['Node-collapsed'] : []),
       ],
     };
@@ -55,12 +56,27 @@ class Node extends Component {
     );
   };
 
+  renderEdges() {
+    const { node } = this.props;
+
+    return (
+      isExpanded(node) &&
+      !isLeaf(node) && (
+        <div>
+          <Edge classes="Edge Edge__right" />
+          <Edge classes="Edge Edge__left" />
+        </div>
+      )
+    );
+  }
+
   render() {
     const { value } = this.props.node;
     return (
       <div className={this.state.classNames.join(' ')}>
         <span className="Node__label">{value}</span>
         <div className="Node__circle" onClick={this.handleCircleClick} />
+        {this.renderEdges()}
         {this.props.children}
       </div>
     );
