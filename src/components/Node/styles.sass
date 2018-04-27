@@ -9,12 +9,15 @@ $primary-color: #ff539a
 
 @for $i from 2 through 3
   .Node__right.Node__level-#{$i}
-    // top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
-    animation: expand-right-level-#{$i} 0.8s forwards
+    animation: expand-right-level-#{$i} 0.6s forwards
   .Node__left.Node__level-#{$i}
-    // bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
-    animation: expand-left-level-#{$i} 0.8s forwards
+    animation: expand-left-level-#{$i} 0.6s forwards
 
+  .Node-collapsed
+    .Node__right.Node__level-#{$i}
+      animation: collapse-right-level-#{$i} 0.6s forwards
+    .Node__left.Node__level-#{$i}
+      animation: collapse-left-level-#{$i} 0.6s forwards
 
 .Node__circle
   width: 20px
@@ -43,7 +46,6 @@ $primary-color: #ff539a
       top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
       opacity: 1
 
-@for $i from 2 through 3
   @keyframes expand-left-level-#{$i}
     0%
       left: 0
@@ -53,4 +55,23 @@ $primary-color: #ff539a
       left: 250px
       bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
       opacity: 1
-      
+
+  @keyframes collapse-right-level-#{$i}
+    0%
+      left: 250px
+      top: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+      opacity: 1
+    100%
+      left: 0
+      top: 0
+      opacity: 0
+
+  @keyframes collapse-left-level-#{$i}
+    0%
+      left: 250px
+      bottom: calc(-#{$base-y-distance} + ((#{$i} - 2) * #{$level-y-factor}))
+      opacity: 1
+    100%
+      left: 0
+      bottom: 0
+      opacity: 0

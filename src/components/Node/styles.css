@@ -5,19 +5,35 @@
 }
 
 .Node__right.Node__level-2 {
-  animation: expand-right-level-2 0.8s forwards;
+  animation: expand-right-level-2 0.6s forwards;
 }
 
 .Node__left.Node__level-2 {
-  animation: expand-left-level-2 0.8s forwards;
+  animation: expand-left-level-2 0.6s forwards;
+}
+
+.Node-collapsed .Node__right.Node__level-2 {
+  animation: collapse-right-level-2 0.6s forwards;
+}
+
+.Node-collapsed .Node__left.Node__level-2 {
+  animation: collapse-left-level-2 0.6s forwards;
 }
 
 .Node__right.Node__level-3 {
-  animation: expand-right-level-3 0.8s forwards;
+  animation: expand-right-level-3 0.6s forwards;
 }
 
 .Node__left.Node__level-3 {
-  animation: expand-left-level-3 0.8s forwards;
+  animation: expand-left-level-3 0.6s forwards;
+}
+
+.Node-collapsed .Node__right.Node__level-3 {
+  animation: collapse-right-level-3 0.6s forwards;
+}
+
+.Node-collapsed .Node__left.Node__level-3 {
+  animation: collapse-left-level-3 0.6s forwards;
 }
 
 .Node__circle {
@@ -51,19 +67,6 @@
   }
 }
 
-@keyframes expand-right-level-3 {
-  0% {
-    left: 0;
-    top: 0;
-    opacity: 0;
-  }
-  100% {
-    left: 250px;
-    top: calc(-100px + ((3 - 2) * 50px));
-    opacity: 1;
-  }
-}
-
 @keyframes expand-left-level-2 {
   0% {
     left: 0;
@@ -73,6 +76,45 @@
   100% {
     left: 250px;
     bottom: calc(-100px + ((2 - 2) * 50px));
+    opacity: 1;
+  }
+}
+
+@keyframes collapse-right-level-2 {
+  0% {
+    left: 250px;
+    top: calc(-100px + ((2 - 2) * 50px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes collapse-left-level-2 {
+  0% {
+    left: 250px;
+    bottom: calc(-100px + ((2 - 2) * 50px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes expand-right-level-3 {
+  0% {
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 250px;
+    top: calc(-100px + ((3 - 2) * 50px));
     opacity: 1;
   }
 }
@@ -87,5 +129,31 @@
     left: 250px;
     bottom: calc(-100px + ((3 - 2) * 50px));
     opacity: 1;
+  }
+}
+
+@keyframes collapse-right-level-3 {
+  0% {
+    left: 250px;
+    top: calc(-100px + ((3 - 2) * 50px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes collapse-left-level-3 {
+  0% {
+    left: 250px;
+    bottom: calc(-100px + ((3 - 2) * 50px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
   }
 }

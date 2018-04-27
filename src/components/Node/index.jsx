@@ -30,19 +30,29 @@ class Node extends Component {
   handleCircleClick = () => {
     const { node, onClick } = this.props;
     const { classNames } = this.state;
+    function onClickCallback() {
+      onClick(node);
+    }
 
     if (!node.left && !node.right) return;
-
-    onClick(node);
 
     const newClassNames = isExpanded(node)
       ? [...classNames, 'Node-collapsed']
       : classNames.filter(filterOutNodeCollapsedClass);
 
-    this.setState({
-      ...this.state,
-      classNames: newClassNames,
-    });
+    this.setState(
+      {
+        ...this.state,
+        classNames: newClassNames,
+      },
+      () => {
+        if (isExpanded(node)) {
+          setTimeout(onClickCallback, 600);
+        } else {
+          onClickCallback();
+        }
+      },
+    );
   };
 
   render() {
