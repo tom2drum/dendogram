@@ -16,6 +16,11 @@ export default {
         value: 'Heuristic Programming',
         visible: true,
         path: 'root.left.right',
+        right: {
+          value: 'Heuristic Modeling',
+          visible: false,
+          path: 'root.left.right.right',
+        },
       },
     },
     right: {

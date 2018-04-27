@@ -1,5 +1,5 @@
 $base-y-distance: 100px
-$level-y-factor: 50px
+$level-y-factor: 35px
 $primary-color: #ff539a
 
 .Node
@@ -7,7 +7,7 @@ $primary-color: #ff539a
   align-items: center
   position: absolute
 
-@for $i from 2 through 3
+@for $i from 2 through 4
   .Node__right.Node__level-#{$i}
     animation: expand-right-level-#{$i} 0.6s forwards
   .Node__left.Node__level-#{$i}
@@ -35,7 +35,7 @@ $primary-color: #ff539a
   width: 150px
   text-align: right
 
-@for $i from 2 through 3
+@for $i from 2 through 4
   @keyframes expand-right-level-#{$i}
     0%
       left: 0

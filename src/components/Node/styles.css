@@ -36,6 +36,22 @@
   animation: collapse-left-level-3 0.6s forwards;
 }
 
+.Node__right.Node__level-4 {
+  animation: expand-right-level-4 0.6s forwards;
+}
+
+.Node__left.Node__level-4 {
+  animation: expand-left-level-4 0.6s forwards;
+}
+
+.Node-collapsed .Node__right.Node__level-4 {
+  animation: collapse-right-level-4 0.6s forwards;
+}
+
+.Node-collapsed .Node__left.Node__level-4 {
+  animation: collapse-left-level-4 0.6s forwards;
+}
+
 .Node__circle {
   width: 20px;
   height: 20px;
@@ -62,7 +78,7 @@
   }
   100% {
     left: 250px;
-    top: calc(-100px + ((2 - 2) * 50px));
+    top: calc(-100px + ((2 - 2) * 35px));
     opacity: 1;
   }
 }
@@ -75,7 +91,7 @@
   }
   100% {
     left: 250px;
-    bottom: calc(-100px + ((2 - 2) * 50px));
+    bottom: calc(-100px + ((2 - 2) * 35px));
     opacity: 1;
   }
 }
@@ -83,7 +99,7 @@
 @keyframes collapse-right-level-2 {
   0% {
     left: 250px;
-    top: calc(-100px + ((2 - 2) * 50px));
+    top: calc(-100px + ((2 - 2) * 35px));
     opacity: 1;
   }
   100% {
@@ -96,7 +112,7 @@
 @keyframes collapse-left-level-2 {
   0% {
     left: 250px;
-    bottom: calc(-100px + ((2 - 2) * 50px));
+    bottom: calc(-100px + ((2 - 2) * 35px));
     opacity: 1;
   }
   100% {
@@ -114,7 +130,7 @@
   }
   100% {
     left: 250px;
-    top: calc(-100px + ((3 - 2) * 50px));
+    top: calc(-100px + ((3 - 2) * 35px));
     opacity: 1;
   }
 }
@@ -127,7 +143,7 @@
   }
   100% {
     left: 250px;
-    bottom: calc(-100px + ((3 - 2) * 50px));
+    bottom: calc(-100px + ((3 - 2) * 35px));
     opacity: 1;
   }
 }
@@ -135,7 +151,7 @@
 @keyframes collapse-right-level-3 {
   0% {
     left: 250px;
-    top: calc(-100px + ((3 - 2) * 50px));
+    top: calc(-100px + ((3 - 2) * 35px));
     opacity: 1;
   }
   100% {
@@ -148,7 +164,59 @@
 @keyframes collapse-left-level-3 {
   0% {
     left: 250px;
-    bottom: calc(-100px + ((3 - 2) * 50px));
+    bottom: calc(-100px + ((3 - 2) * 35px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes expand-right-level-4 {
+  0% {
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 250px;
+    top: calc(-100px + ((4 - 2) * 35px));
+    opacity: 1;
+  }
+}
+
+@keyframes expand-left-level-4 {
+  0% {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 250px;
+    bottom: calc(-100px + ((4 - 2) * 35px));
+    opacity: 1;
+  }
+}
+
+@keyframes collapse-right-level-4 {
+  0% {
+    left: 250px;
+    top: calc(-100px + ((4 - 2) * 35px));
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes collapse-left-level-4 {
+  0% {
+    left: 250px;
+    bottom: calc(-100px + ((4 - 2) * 35px));
     opacity: 1;
   }
   100% {

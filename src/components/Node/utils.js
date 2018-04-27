@@ -1,7 +1,8 @@
 export function isExpanded(node) {
   return (
     (!node.left && !node.right) ||
-    (node.left && node.right && node.left.visible && node.right.visible)
+    (node.left && node.left.visible) ||
+    (node.right && node.right.visible)
   );
 }
 
