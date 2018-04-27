@@ -1,6 +1,18 @@
 .Node
   display: flex
   align-items: center
+  position: absolute
+
+.Node__left,
+.Node__right
+  left: 250px
+
+@for $i from 1 through 3
+  .Node__right.Node__level-#{$i}
+    top: calc(-100px + ((#{$i} - 2) * 50px))
+  .Node__left.Node__level-#{$i}
+    bottom: calc(-100px + ((#{$i} - 2) * 50px))
+
 
 .Node__circle
   width: 20px

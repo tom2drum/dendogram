@@ -1,6 +1,36 @@
 .Node {
   display: flex;
   align-items: center;
+  position: absolute;
+}
+
+.Node__left,
+.Node__right {
+  left: 250px;
+}
+
+.Node__right.Node__level-1 {
+  top: calc(-100px + ((1 - 2) * 50px));
+}
+
+.Node__left.Node__level-1 {
+  bottom: calc(-100px + ((1 - 2) * 50px));
+}
+
+.Node__right.Node__level-2 {
+  top: calc(-100px + ((2 - 2) * 50px));
+}
+
+.Node__left.Node__level-2 {
+  bottom: calc(-100px + ((2 - 2) * 50px));
+}
+
+.Node__right.Node__level-3 {
+  top: calc(-100px + ((3 - 2) * 50px));
+}
+
+.Node__left.Node__level-3 {
+  bottom: calc(-100px + ((3 - 2) * 50px));
 }
 
 .Node__circle {

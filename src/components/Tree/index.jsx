@@ -4,6 +4,8 @@ import Node from '../Node';
 import tree from '../../data/tree';
 import { toggleChildrenVisibility } from './utils';
 
+import './styles.css';
+
 class Tree extends Component {
   state = {
     tree,
@@ -44,12 +46,10 @@ class Tree extends Component {
   render() {
     const { root } = this.state.tree;
     return (
-      <div>
-        <Node
-          node={root}
-          onClick={this.handleNodeClick}
-          children={this.renderChildren(root)}
-        />
+      <div className="Tree">
+        <Node node={root} onClick={this.handleNodeClick}>
+          {this.renderChildren(root)}
+        </Node>
       </div>
     );
   }
