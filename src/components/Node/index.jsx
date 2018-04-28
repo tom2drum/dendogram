@@ -63,8 +63,8 @@ class Node extends Component {
       isExpanded(node) &&
       !isLeaf(node) && (
         <div>
-          <Edge classes="Edge Edge__right" />
-          <Edge classes="Edge Edge__left" />
+          {node.right && <Edge classes="Edge Edge__right" />}
+          {node.left && <Edge classes="Edge Edge__left" />}
         </div>
       )
     );

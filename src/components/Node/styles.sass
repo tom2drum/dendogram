@@ -4,12 +4,15 @@ $circle-margin: 10px
 $circle-radius: 10px
 $label-width: 150px
 
-$primary-color: #ff539a
+$color-primary: #ff539a
+$color-white-transparent: rgba(255, 255, 255, 0.5)
 
+$node-offset-y-step: 50px
 $node-offset-x: 250px
 @function calc-offset-y($i, $factor: 1, $adj: 0px)
-  @return calc((-100px + ((#{$i} - 1) * 35px)) * #{$factor} + #{$adj})
+  @return calc(((#{$levels} - #{$i} + 1) * #{$node-offset-y-step}) * #{$factor} + #{$adj})
 
+$animation-time: 0.6s
 
 //  Node styles
 
@@ -17,19 +20,20 @@ $node-offset-x: 250px
   display: flex
   align-items: center
   position: absolute
+  background-color: $color-white-transparent
 
 
 @for $i from 1 through $levels
   .Node__right.Node__level-#{$i}
-    animation: expand-right-level-#{$i} 0.6s forwards
+    animation: expand-right-level-#{$i} $animation-time forwards
   .Node__left.Node__level-#{$i}
-    animation: expand-left-level-#{$i} 0.6s forwards
+    animation: expand-left-level-#{$i} $animation-time forwards
 
   .Node-collapsed
     .Node__right.Node__level-#{$i}
-      animation: collapse-right-level-#{$i} 0.6s forwards
+      animation: collapse-right-level-#{$i} $animation-time forwards
     .Node__left.Node__level-#{$i}
-      animation: collapse-left-level-#{$i} 0.6s forwards
+      animation: collapse-left-level-#{$i} $animation-time forwards
 
 
 //  Node circle and label styles
@@ -38,14 +42,14 @@ $node-offset-x: 250px
   width: calc(2 * #{$circle-radius})
   height: calc(2 * #{$circle-radius})
   border-radius: 50%
-  border: $circle-border-width solid $primary-color
+  border: $circle-border-width solid $color-primary
 
   margin-left: $circle-margin
   cursor: pointer
   background-color: white
 
 .Node-collapsed > .Node__circle
-  background-color: lighten($primary-color, 20%)
+  background-color: lighten($color-primary, 20%)
 
 .Node__label
   width: $label-width
@@ -59,19 +63,27 @@ $node-offset-x: 250px
   position: absolute
   left: calc(#{$label-width} + #{$circle-margin} + #{$circle-border-width} + #{$circle-radius})
   top: calc(#{$circle-radius} + #{$circle-border-width})
-  svg
-    width: $node-offset-x
+
+.Edge__left
+  transform: scaleX(-1)
 
 @for $i from 0 through $levels - 1
   .Node__level-#{$i}
     .Edge
       svg
-        height: calc-offset-y($i + 1, -1)
+        animation: expand-edge-level-#{$i} $animation-time forwards
+        transform-origin: left top
     .Edge__right
-      top: calc-offset-y($i + 1, 1, $circle-border-width + $circle-radius)
+      animation: move-edge-top-expanding-level-#{$i} $animation-time forwards
 
-.Edge__left
-  transform: scaleX(-1)
+  .Node-collapsed.Node__level-#{$i}
+    .Edge
+      svg
+        animation: collapse-edge-level-#{$i} $animation-time forwards
+        transform-origin: left top
+    .Edge__right
+      animation: move-edge-top-collapsing-level-#{$i} $animation-time forwards
+
 
 
 //  Animations
@@ -84,7 +96,7 @@ $node-offset-x: 250px
       opacity: 0
     100%
       left: $node-offset-x
-      top: calc-offset-y($i)
+      top: calc-offset-y($i, -1)
       opacity: 1
 
   @keyframes expand-left-level-#{$i}
@@ -94,13 +106,13 @@ $node-offset-x: 250px
       opacity: 0
     100%
       left: $node-offset-x
-      bottom: calc-offset-y($i)
+      bottom: calc-offset-y($i, -1)
       opacity: 1
 
   @keyframes collapse-right-level-#{$i}
     0%
       left: $node-offset-x
-      top: calc-offset-y($i)
+      top: calc-offset-y($i, -1)
       opacity: 1
     100%
       left: 0
@@ -110,9 +122,42 @@ $node-offset-x: 250px
   @keyframes collapse-left-level-#{$i}
     0%
       left: $node-offset-x
-      bottom: calc-offset-y($i)
+      bottom: calc-offset-y($i, -1)
       opacity: 1
     100%
       left: 0
       bottom: 0
       opacity: 0
+
+@for $i from 0 through $levels - 1
+  @keyframes expand-edge-level-#{$i}
+    0%
+      width: 0
+      height: 0
+      opacity: 0
+    100%
+      width: $node-offset-x
+      height: calc-offset-y($i + 1, 1)
+      opacity: 1
+
+  @keyframes collapse-edge-level-#{$i}
+    0%
+      width: $node-offset-x
+      height: calc-offset-y($i + 1, 1)
+      opacity: 1
+    100%
+      width: 0
+      height: 0
+      opacity: 0
+
+  @keyframes move-edge-top-expanding-level-#{$i}
+    0%
+      top: calc(#{$circle-radius} + #{$circle-border-width})
+    100%
+      top: calc-offset-y($i + 1, -1, $circle-border-width + $circle-radius)
+
+  @keyframes move-edge-top-collapsing-level-#{$i}
+    0%
+      top: calc-offset-y($i + 1, -1, $circle-border-width + $circle-radius)
+    100%
+      top: calc(#{$circle-radius} + #{$circle-border-width})
