@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Edge = ({ classes }) => (
-  <div className={classes}>
+  <div className={`Edge ${classes}`}>
     <svg viewBox="0 0 250 61" preserveAspectRatio="none">
       <g
         id="Page-1"
@@ -21,5 +22,13 @@ const Edge = ({ classes }) => (
     </svg>
   </div>
 );
+
+Edge.defaultProps = {
+  classes: '',
+};
+
+Edge.propTypes = {
+  classes: PropTypes.string,
+};
 
 export default Edge;

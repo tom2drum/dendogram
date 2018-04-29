@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { isExpanded, isLeaf, filterOutNodeCollapsedClass } from './utils';
 import './styles.css';
 import Edge from './Edge';
 
 class Node extends Component {
+  static propTypes = {
+    node: PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }).isRequired,
+    onClick: PropTypes.func.isRequired,
+  };
+
   state = {
     classNames: ['Node'],
   };
@@ -63,8 +72,8 @@ class Node extends Component {
       isExpanded(node) &&
       !isLeaf(node) && (
         <div>
-          {node.right && <Edge classes="Edge Edge__right" />}
-          {node.left && <Edge classes="Edge Edge__left" />}
+          {node.right && <Edge classes="Edge__right" />}
+          {node.left && <Edge classes="Edge__left" />}
         </div>
       )
     );
@@ -75,7 +84,12 @@ class Node extends Component {
     return (
       <div className={this.state.classNames.join(' ')}>
         <span className="Node__label">{value}</span>
-        <div className="Node__circle" onClick={this.handleCircleClick} />
+        <div
+          className="Node__circle"
+          onClick={this.handleCircleClick}
+          role="button"
+          tabIndex="0"
+        />
         {this.renderEdges()}
         {this.props.children}
       </div>
