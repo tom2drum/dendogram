@@ -5,16 +5,16 @@ export default {
     path: 'root',
     left: {
       value: 'Engine Intelligence',
-      visible: true,
+      visible: false,
       path: 'root.left',
       left: {
         value: 'Neuro-like Networks',
-        visible: true,
+        visible: false,
         path: 'root.left.left',
       },
       right: {
         value: 'Heuristic Programming',
-        visible: true,
+        visible: false,
         path: 'root.left.right',
         right: {
           value: 'Heuristic Modeling',
@@ -25,7 +25,7 @@ export default {
     },
     right: {
       value: 'Core Intelligence',
-      visible: true,
+      visible: false,
       path: 'root.right',
     },
   },
