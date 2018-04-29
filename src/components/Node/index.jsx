@@ -4,6 +4,8 @@ import { isExpanded, isLeaf, filterOutNodeCollapsedClass } from './utils';
 import './styles.css';
 import Edge from './Edge';
 
+const ANIMATION_TIME = 500;
+
 class Node extends Component {
   static propTypes = {
     node: PropTypes.shape({
@@ -57,7 +59,7 @@ class Node extends Component {
       },
       () => {
         if (isExpanded(node)) {
-          setTimeout(onClickCallback, 600);
+          setTimeout(onClickCallback, ANIMATION_TIME);
         } else {
           onClickCallback();
         }

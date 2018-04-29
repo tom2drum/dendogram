@@ -6,51 +6,51 @@
 }
 
 .Node__right.Node__level-1 {
-  animation: expand-right-level-1 0.6s forwards;
+  animation: expand-right-level-1 0.5s forwards;
 }
 
 .Node__left.Node__level-1 {
-  animation: expand-left-level-1 0.6s forwards;
+  animation: expand-left-level-1 0.5s forwards;
 }
 
 .Node-collapsed .Node__right.Node__level-1 {
-  animation: collapse-right-level-1 0.6s forwards;
+  animation: collapse-right-level-1 0.5s forwards;
 }
 
 .Node-collapsed .Node__left.Node__level-1 {
-  animation: collapse-left-level-1 0.6s forwards;
+  animation: collapse-left-level-1 0.5s forwards;
 }
 
 .Node__right.Node__level-2 {
-  animation: expand-right-level-2 0.6s forwards;
+  animation: expand-right-level-2 0.5s forwards;
 }
 
 .Node__left.Node__level-2 {
-  animation: expand-left-level-2 0.6s forwards;
+  animation: expand-left-level-2 0.5s forwards;
 }
 
 .Node-collapsed .Node__right.Node__level-2 {
-  animation: collapse-right-level-2 0.6s forwards;
+  animation: collapse-right-level-2 0.5s forwards;
 }
 
 .Node-collapsed .Node__left.Node__level-2 {
-  animation: collapse-left-level-2 0.6s forwards;
+  animation: collapse-left-level-2 0.5s forwards;
 }
 
 .Node__right.Node__level-3 {
-  animation: expand-right-level-3 0.6s forwards;
+  animation: expand-right-level-3 0.5s forwards;
 }
 
 .Node__left.Node__level-3 {
-  animation: expand-left-level-3 0.6s forwards;
+  animation: expand-left-level-3 0.5s forwards;
 }
 
 .Node-collapsed .Node__right.Node__level-3 {
-  animation: collapse-right-level-3 0.6s forwards;
+  animation: collapse-right-level-3 0.5s forwards;
 }
 
 .Node-collapsed .Node__left.Node__level-3 {
-  animation: collapse-left-level-3 0.6s forwards;
+  animation: collapse-left-level-3 0.5s forwards;
 }
 
 .Node__circle {
@@ -84,57 +84,57 @@
 }
 
 .Node__level-0 .Edge svg {
-  animation: expand-edge-level-0 0.6s forwards;
+  animation: expand-edge-level-0 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node__level-0 .Edge__right {
-  animation: move-edge-top-expanding-level-0 0.6s forwards;
+  animation: move-edge-top-expanding-level-0 0.5s forwards;
 }
 
 .Node-collapsed.Node__level-0 .Edge svg {
-  animation: collapse-edge-level-0 0.6s forwards;
+  animation: collapse-edge-level-0 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node-collapsed.Node__level-0 .Edge__right {
-  animation: move-edge-top-collapsing-level-0 0.6s forwards;
+  animation: move-edge-top-collapsing-level-0 0.5s forwards;
 }
 
 .Node__level-1 .Edge svg {
-  animation: expand-edge-level-1 0.6s forwards;
+  animation: expand-edge-level-1 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node__level-1 .Edge__right {
-  animation: move-edge-top-expanding-level-1 0.6s forwards;
+  animation: move-edge-top-expanding-level-1 0.5s forwards;
 }
 
 .Node-collapsed.Node__level-1 .Edge svg {
-  animation: collapse-edge-level-1 0.6s forwards;
+  animation: collapse-edge-level-1 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node-collapsed.Node__level-1 .Edge__right {
-  animation: move-edge-top-collapsing-level-1 0.6s forwards;
+  animation: move-edge-top-collapsing-level-1 0.5s forwards;
 }
 
 .Node__level-2 .Edge svg {
-  animation: expand-edge-level-2 0.6s forwards;
+  animation: expand-edge-level-2 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node__level-2 .Edge__right {
-  animation: move-edge-top-expanding-level-2 0.6s forwards;
+  animation: move-edge-top-expanding-level-2 0.5s forwards;
 }
 
 .Node-collapsed.Node__level-2 .Edge svg {
-  animation: collapse-edge-level-2 0.6s forwards;
+  animation: collapse-edge-level-2 0.5s forwards;
   transform-origin: left top;
 }
 
 .Node-collapsed.Node__level-2 .Edge__right {
-  animation: move-edge-top-collapsing-level-2 0.6s forwards;
+  animation: move-edge-top-collapsing-level-2 0.5s forwards;
 }
 
 @keyframes expand-right-level-1 {
