@@ -1,1 +1,34 @@
-<mxfile host="app.diagrams.net" modified="2020-09-29T13:00:47.208Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15" etag="8b-Ob5yfXvfYMAv-oTGw" version="13.7.6" type="github"><diagram id="7smqW_2vYNdz69Y31l9n" name="Page-1">xZNRT4MwEIB/DY8mtOiCr8MpLyQaYsweG3rSaqGk3IT56y1yjOFcoomJT7TfXa/t1yOIkqq/c6JRmZVgAh7KPohuAs4Zi1f+M5D9SGLGR1A6LSlpBrl+B4Ih0Z2W0C4S0VqDulnCwtY1FLhgwjnbLdOerVnu2ogSTkBeCHNKn7RERbe4Cmeegi7VtDMLKVKJKZlAq4S03RGKNkGUOGtxHFV9AmaQN3kZ192eiR4O5qDGnyx43GzTLEwesjbd4ss1E+v69YKqvAmzowvfi9o6UYnUYt5YbOnwuJ+MOLurJQxFwyBad0oj5I0ohmjne8AzhZXxM+aHVB4cQn/23Oxgw7cR2ArQ7X0KLYjJHzUQnwR383OwS2Lq6CkmJqgDykPlWZIfkKdfOOMnzv7dEVt9kRR/I4n/jSQ/nZv2M3b060ebDw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-09-29T13:08:22.685Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15" etag="30FjpXRaqhqqT0W6atin" version="13.7.6" type="github">
+  <diagram id="7smqW_2vYNdz69Y31l9n" name="Page-1">
+    <mxGraphModel dx="1186" dy="812" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UEYHM0CQMsHYtj91aBnk-1" value="PanoramaHotSpots" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="UEYHM0CQMsHYtj91aBnk-2" value="PanoramaHotSpotsModeSwitcher" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="280" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-1" value="PanoramaHotSpotsPromo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="340" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-2" value="PanoramaHotSpotsContextMenu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="400" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-3" value="PanoramaHostSpotsCommentPopup" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="460" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-4" value="PanoramaHostSpotsPhotoPopup" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="520" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-5" value="PanoramaHostSpot" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="580" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="evqnOPHmrntDd8g38HEj-6" value="PanoramaHostSpotAdd" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="640" width="220" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
