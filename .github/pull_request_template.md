@@ -1,1 +1,1 @@
-./.github/pulL_REQUEST_TEMPLATE/one.md
+./.github/PULL_REQUEST_TEMPLATE/one.md
