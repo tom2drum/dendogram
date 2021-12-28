@@ -1,3 +1,1 @@
-__three__
-
-seven eight nine
+./.github/pulL_REQUEST_TEMPLATE/one.md
